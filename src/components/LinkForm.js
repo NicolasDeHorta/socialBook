@@ -49,19 +49,19 @@ export const LinkForm = (props) => {
 
     return (
         <form className="card card-body" onSubmit={handleSubmit}>
-            <div className="form-group input-group">
+            <div className="form-group input-group p-2">
                 <div className="input-group-text bg-light"> <i className="material-icons">insert_link</i> </div>
                 <input type="text" className="form-control" value={linkData.url} placeholder="https://someurl.com" name="url" onChange={handleInputChange}/>
             </div>
-            <div className="form-group input-group">
+            <div className="form-group input-group p-2">
                 <div className="input-group-text bg-light"> <i className="material-icons">create</i> </div>
                 <input type="text" className="form-control" value={linkData.text} name="text" placeholder="websiteName" onChange={handleInputChange}/>
             </div>
-            <div className="form-group">
+            <div className="form-group p-2">
                 <textarea name="description" rows="3" value={linkData.description} className="form-control" onChange={handleInputChange} placeholder="Website description....."></textarea>
             </div>
 
-            <button className="btn btn-primary">{props.currentId == "" ? "Save" : "Edit"}</button>
+            <button className="btn btn-primary p-2">{props.currentId == "" ? "Save" : "Edit"}</button>
         </form>
     )
 }

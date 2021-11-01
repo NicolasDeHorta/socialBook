@@ -84,7 +84,7 @@ export const Links = () => {
                     <div className="d-flex justify-content-between">
                         <h4>{link.text}</h4>
                         <div>
-                        <i className="material-icons text-light" onClick={() => setCurrentId(link.id)}>create</i>
+                        <i className="material-icons text-primary" onClick={() => setCurrentId(link.id)}>create</i>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <i className="material-icons text-danger" onClick={() => handleDelete(link.id)}>close</i>
                         </div>
