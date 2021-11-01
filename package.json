@@ -2,8 +2,8 @@
   "name": "socialbook",
   "version": "0.1.0",
   "engines": {
-    "node": "16.x",
-    "npm": "7.x"
+    "node": "16.4.2",
+    "npm": "7.18.1"
   },
   "private": true,
   "dependencies": {
