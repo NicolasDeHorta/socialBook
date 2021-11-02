@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Links } from './components/Links';
+import {Footer} from './components/Footer';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
       <div className="row">
             <Links />
       </div>
+      <Footer />
     </div>
   );
 }
