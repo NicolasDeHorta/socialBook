@@ -1,6 +1,4 @@
-import { getAnalytics } from "firebase/analytics";
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth"
+import firebase from 'firebase/compat/app'
 import "firebase/compat/firestore"
 
 const firebaseConfig = {
@@ -13,8 +11,8 @@ const firebaseConfig = {
   measurementId: "G-44JJSHGTFD"
 };
 
-// Initialize Firebase
-const fb = firebase.initializeApp(firebaseConfig);
-const analytics = getAnalytics(fb);
+// Initialize Firebase and Firestore
+firebase.initializeApp(firebaseConfig);
+export const db = firebase.firestore() 
 
-export const db = fb.firestore()
+export {firebase}

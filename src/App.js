@@ -1,21 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-import { Links } from './components/Links';
-import {Footer} from './components/Footer';
-
-function App() {
+import { Main } from './Routes/Main';
+import { Signin } from './Routes/Signin';
 
 
+import {
+  BrowserRouter as Router, Route , Switch 
+} from 'react-router-dom'
+import { useState } from 'react';
+import firebase from './firebase';
 
+
+export default function App() {
+  const [currentUser, setCurrentUser] = useState(localStorage.getItem("currentUser"))
 
   return (
-    <div className="container p-4">     
-      <div className="row">
-            <Links />
+    <Router>
+      <div>
+      <Switch>
+        <Route path="/" component={Main} />
+      </Switch>
       </div>
-      <Footer />
-    </div>
-  );
+    </Router>
+ 
+  )
 }
-
-export default App;

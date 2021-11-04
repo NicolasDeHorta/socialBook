@@ -73,7 +73,7 @@ export const LinkForm = (props) => {
                 <textarea name="description" rows="3" value={linkData.description} className="form-control" onChange={handleInputChange} placeholder="Website description....."></textarea>
             </div>
 
-            <button className="btn btn-primary p-2">{props.currentId == "" ? "Save" : "Edit"}</button>
+            <button className="btn btn-primary p-2">{props.currentId === "" ? "Save" : "Edit"}</button>
         </form>
     )
 }
