@@ -3,11 +3,13 @@ import { LinkForm } from './LinkForm';
 import { db } from "../firebase";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import {BeatLoader} from 'react-spinners'
 
 export const Links = () => {
 
     const [linksList, setLinksList] = useState([])
     const [currentId, setCurrentId] = useState("")
+    const [loading, setLoading] = useState(true)
     
 
     const addOrEditLink = async linkObject => {
@@ -32,6 +34,7 @@ export const Links = () => {
         })
         console.log("Fetched all links")
         setLinksList(docs)
+        setLoading(false)
     })}
 
     const handleDelete = async (id) => {
@@ -52,12 +55,6 @@ export const Links = () => {
           })
         }
 
-
-    
-
-
-
-
     useEffect(() => {
         console.log("fetching data")
         getLinkData()
@@ -73,12 +70,14 @@ export const Links = () => {
           icon: icon
         })
     }
-
     
     return (
         <>
         <LinkForm {...{addOrEditLink, currentId, linksList}}/>
-        {linksList.map(link => (
+        <div className="d-flex d-flex justify-content-around mt-2 mb-2">
+        <BeatLoader size={50} loading={loading} color="grey"/>
+        </div>
+            {linksList.map(link => (
             <div className="card mb-1" key={link.id}>
                 <div className="card-body">
                     <div className="d-flex justify-content-between">
